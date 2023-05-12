@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Frontend Mentor | Ping coming soon page</title>
+
+    <script
+      src="https://kit.fontawesome.com/693c746153.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header>
+      <img src="./images/logo.svg" alt="Logo Icon" />
+    </header>
+
+    <main class="container">
+      <h1><span>We are launching</span> soon!</h1>
+
+      <h2>Subscribe and get notified</h2>
+
+      <form id="notify-form" class="subscribeForm">
+        <div class="email-section">
+          <input
+            id="email-input"
+            type="text"
+            placeholder="Your email address..."
+          />
+          <span id="email-feedback">
+            Please provide a valid email address
+          </span>
+        </div>
+
+        <input type="submit" value="Notify Me" onclick="emailValidate()">
+        </input>
+      </form>
+
+      <img
+        src="./images/illustration-dashboard.png"
+        alt="Dashboard Illustration Image"
+      />
+
+      <div class="socials">
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-instagram"></i>
+      </div>
+
+      <p>&copy; Copyright Ping. All rights reserved.</p>
+    </main>
+
+    <footer>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">AhmedTx</a>.
+      </p>
+    </footer>
+
+    <script>
+      const emailFeedback = document.getElementById("email-feedback");
+
+      function emailValidate() {
+        const emailInput = document.getElementById("email-input");
+
+        const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
+          emailInput.value
+        );
+
+        // Show feedback based on email validity
+        if (isValidEmail) {
+          emailFeedback.style.display = "none";
+          emailInput.style.borderColor = "#d2d2d2";
+        } else {
+          emailFeedback.style.display = "block";
+          emailInput.style.borderColor = "hsl(354, 100%, 66%)";
+        }
+      }
+
+      document.getElementById("notify-form")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+      });
+    </script>
+  </body>
+</html>
