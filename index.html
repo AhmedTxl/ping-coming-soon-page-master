@@ -59,13 +59,17 @@
       <p>&copy; Copyright Ping. All rights reserved.</p>
     </main>
 
-    <footer>
-      <p class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by <a href="#">AhmedTx</a>.
-      </p>
+    <footer class="attribution">
+      <img id='footerImg' src="./images/avatar.jpg" alt="avatar pic" />
+      
+      <div id="footerPop">
+        <span>
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
+          . Coded by <a href="https://www.github.com/ahmedTxl" target="_blank">AhmedTx</a>.
+        </span>
+        
+      </div>
     </footer>
 
     <script>
@@ -91,6 +95,19 @@
       document.getElementById("notify-form")
       .addEventListener("submit", function (event) {
         event.preventDefault();
+      });
+
+      const image = document.getElementById('footerImg');
+      const popup = document.getElementById('footerPop');
+
+      image.addEventListener('click', () => {
+        popup.classList.toggle('show');
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!popup.contains(event.target) && !image.contains(event.target)) {
+          popup.classList.remove('show');
+        }
       });
     </script>
   </body>
