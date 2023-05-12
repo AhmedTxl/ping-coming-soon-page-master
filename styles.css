@@ -224,7 +224,7 @@ main p {
   border-radius: 0.5rem;
   width: 86px;
   height: 86px;
-  box-shadow: rgb(36 36 36 / 70%) 0px 11px 46px 5px;
+  box-shadow: rgba(36, 36, 36, 0.55) 0px 6px 42px 2px;
   z-index: 99;
   transition: all 0.215s ease-in;
 }
